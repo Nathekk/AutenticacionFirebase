@@ -1,17 +1,15 @@
 const express = require('express');
 require('dotenv').config();
-const admin = require('firebase-admin');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-admin.initializeApp();
+app.use(express.static("views"));
+app.use(express.json());
 
-app.get('/', (req, res) => {
-    res.send('Servidor funcionando');
-});
+const indexRoutes = require('./routes/rutas.js');
+app.use('/', indexRoutes);
 
-// Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
