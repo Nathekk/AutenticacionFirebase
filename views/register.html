@@ -71,7 +71,11 @@
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
-                console.log("error al registrarte")
+                let texto = "No se pudo completar el registro.";
+                if (error.code === "auth/email-already-in-use") {
+                    texto = "Este correo ya está registrado";
+                }
+                mensajeDiv.innerHTML = `<div class="alert alert-danger">${texto}</div>`;
             });
     });
 </script>
