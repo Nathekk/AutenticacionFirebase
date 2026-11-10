@@ -11,5 +11,5 @@ const indexRoutes = require('./routes/rutas.js');
 app.use('/', indexRoutes);
 
 app.listen(PORT, () => {
-    console.log(`Servidor escuchando en http://localhost:${PORT}`);
+    console.log(`Servidor correct http://localhost:${PORT}`);
 });
