@@ -65,6 +65,7 @@
             .then((userCredential) => {
                 const user = userCredential.user;
                 mensajeDiv.innerHTML = `<div class="alert alert-success">Todo perfect..redirigiendo...</div>`;
+                window.location.href = "./login.html";
                 document.getElementById('formRegistro').reset();
             })
             .catch((error) => {

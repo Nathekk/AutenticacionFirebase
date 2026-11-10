@@ -61,10 +61,8 @@
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                mensajeDiv.innerHTML = `<div class="alert alert-success">¡Inicio de sesión exitoso! Redirigiendo...</div>`;
-                setTimeout(() => {
-                    window.location.href = "/home";
-                }, 1500);
+                mensajeDiv.innerHTML = `<div class="alert alert-success">Todo perfect..redirigiendo...</div>`;
+                window.location.href = "/home";
             })
             .catch((error) => {
                 mensajeDiv.innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
